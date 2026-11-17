@@ -1,0 +1,82 @@
+{
+  "context": {
+    "benefit": "1200",
+    "capacity": 20,
+    "three_valued": true,
+    "group_field": "district",
+    "units": {
+      "age": "years",
+      "income": "CNY/month",
+      "rent": "CNY/month",
+      "commute_km": "km",
+      "benefit": "CNY"
+    },
+    "policy_versions": [
+      {
+        "version": "anju-2025",
+        "expression": "age >= 18 and degree in ['bachelor','master','doctor'] and employed == True",
+        "effective_from": "2025-01-01",
+        "effective_to": "2025-12-31"
+      },
+      {
+        "version": "anju-2026",
+        "expression": "age >= 18 and degree in ['master','doctor'] and employed == True and income - rent >= 2000",
+        "effective_from": "2026-01-01"
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "person-001",
+      "owner_id": "person-001",
+      "facts": {"age": 26, "degree": "master", "employed": true, "income": 9000, "rent": 3500, "district": "haidian"},
+      "demand": 1,
+      "amount": "1200",
+      "effective_from": "2026-11-10",
+      "request_key": "gap-001"
+    },
+    {
+      "id": "person-002",
+      "owner_id": "person-002",
+      "facts": {"age": 24, "degree": "master", "employed": true, "income": 8000, "district": "chaoyang"},
+      "effective_from": "2026-11-11",
+      "request_key": "gap-002"
+    },
+    {
+      "id": "person-003",
+      "owner_id": "person-003",
+      "facts": {"age": 28, "district": "haidian"},
+      "effective_from": "2026-11-12",
+      "request_key": "gap-003"
+    },
+    {
+      "id": "person-004",
+      "owner_id": "person-004",
+      "facts": {"age": 17, "degree": "master", "employed": true, "income": 9000, "rent": 3000, "district": "fengtai"},
+      "effective_from": "2026-11-12",
+      "request_key": "gap-004"
+    },
+    {
+      "id": "person-005",
+      "owner_id": "person-005",
+      "facts": {"age": 30, "degree": "bachelor", "employed": true, "income": 7000, "rent": 2500, "district": "chaoyang"},
+      "effective_from": "2025-06-01",
+      "request_key": "gap-005"
+    },
+    {
+      "id": "person-006",
+      "owner_id": "person-006",
+      "facts": {"age": 25, "degree": "doctor", "employed": true, "income": 12000, "rent": 3000, "district": "haidian"},
+      "effective_from": "2026-11-13",
+      "amount": "1500",
+      "request_key": "gap-006"
+    },
+    {
+      "id": "person-007",
+      "owner_id": "person-007",
+      "facts": {"age": 22, "degree": "master", "employed": false, "income": 0, "rent": 0, "district": "fengtai"},
+      "effective_from": "2026-11-14",
+      "request_key": "gap-007"
+    }
+  ]
+}
